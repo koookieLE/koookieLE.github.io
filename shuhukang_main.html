@@ -60,8 +60,6 @@
 
     <!-- 主内容区域 -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-
         <!-- 标签页内容 -->
         <div class="tab-content">
             <!-- 任务导航标签页 -->
@@ -98,7 +96,7 @@
                     </div>
                 </div>
 
-                <!-- 术前进度卡片 (已修改为新内容) -->
+                <!-- 术前进度卡片 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
                     <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
                         <i class="fa fa-calendar-check-o text-primary mr-2"></i>
@@ -106,7 +104,6 @@
                     </h3>
                     <p class="text-xs text-gray-500 mb-3">点击后查看提醒内容</p>
                     <div class="space-y-3">
-                        <!-- 任务1：入院前物品购置 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">1. 入院前物品购置</span>
@@ -128,7 +125,6 @@
                             </div>
                         </div>
 
-                        <!-- 任务2：术前检查提醒 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">2. 术前检查提醒</span>
@@ -179,7 +175,6 @@
                             </div>
                         </div>
 
-                        <!-- 任务3：戒烟及用药调整提示 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">3. 戒烟及用药调整提示</span>
@@ -197,7 +192,6 @@
                             </div>
                         </div>
 
-                        <!-- 任务4：灌肠准备 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">4. 灌肠准备 </span>
@@ -211,7 +205,6 @@
                             </div>
                         </div>
 
-                        <!-- 任务5：禁食禁饮 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">5. 禁食、禁饮</span>
@@ -225,7 +218,6 @@
                             </div>
                         </div>
 
-                        <!-- 任务6：准备入院物品 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">6. 准备入院物品！</span>
@@ -239,7 +231,6 @@
                             </div>
                         </div>
 
-                        <!-- 任务7：入院 -->
                         <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">7.空腹入院</span>
@@ -255,32 +246,16 @@
                     </div>
                 </div>
 
-                <!-- 术后康复（新版动态任务） -->
-<div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
-    <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
-        <i class="fa fa-heartbeat text-primary mr-2"></i>
-        二、术后康复任务
-    </h3>
-
-    <div class="space-y-3">
-
-        <!-- 任务列表 -->
-        <script>
-            const postopTasks = [
-                "1. 饮食恢复",
-                "2. 踝泵运动",
-                "3. 体位摆放",
-                "4. 下床活动",
-                "5. 正确咳嗽",
-                "6. 排气管理",
-                "7. 第5天伤口护理",
-                "8. 更换敷贴"
-            ];
-        </script>
-
-        <div id="postopTaskList"></div>
-    </div>
-</div>
+                <!-- 术后康复 -->
+                <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
+                    <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fa fa-heartbeat text-primary mr-2"></i>
+                        二、术后康复任务
+                    </h3>
+                    <div class="space-y-3">
+                        <div id="postopTaskList"></div>
+                    </div>
+                </div>
 
                 <!-- 康复注意事项卡片 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
@@ -315,7 +290,6 @@
 
             <!-- 问题反馈标签页 -->
             <div id="content-videos" class="tab-pane hidden">
-                <!-- 问题反馈表单 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
                     <h2 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
                         <i class="fa fa-comment-medical text-primary mr-2"></i>
@@ -358,7 +332,6 @@
                     </form>
                 </div>
 
-                <!-- 历史反馈记录 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow">
                     <h2 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
                         <i class="fa fa-history text-primary mr-2"></i>
@@ -401,7 +374,6 @@
             <div id="content-settings" class="tab-pane hidden">
                 <div class="bg-white rounded-lg shadow-md p-6 card-shadow">
                     <h2 class="text-lg font-semibold text-gray-800 mb-6">应用设置</h2>
-                    <!-- 字体大小设置 -->
                     <div class="mb-8">
                         <h3 class="text-md font-medium text-gray-700 mb-4">字体大小</h3>
                         <div class="flex items-center justify-between">
@@ -413,7 +385,6 @@
                             <span class="text-base font-medium text-gray-800" id="fontSizeDisplay">标准</span>
                         </div>
                     </div>
-                    <!-- 康复报告设置 -->
                     <div class="mb-8">
                         <h3 class="text-md font-medium text-gray-700 mb-4">康复报告</h3>
                         <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
@@ -427,7 +398,6 @@
                             </label>
                         </div>
                     </div>
-                    <!-- 其他设置 -->
                     <div>
                         <h3 class="text-md font-medium text-gray-700 mb-4">其他</h3>
                         <button id="logoutBtn" class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">退出登录</button>
@@ -456,7 +426,7 @@
     </nav>
 
     <script>
-        // 页面加载时检查用户是否已登录
+        // 页面加载
         document.addEventListener('DOMContentLoaded', function() {
             const userName = localStorage.getItem('userName') || '张三';
             const hospitalId = localStorage.getItem('hospitalId') || '20250721-001';
@@ -483,15 +453,13 @@
             setupFeedbackForm();
         });
 
-        // 新增：用于展开/收起术前任务详情
+        // 术前任务展开收起
         function setupPreoperativeTaskCheckboxes() {
             const taskElements = document.querySelectorAll('.preoperative-task');
             taskElements.forEach(taskElement => {
                 taskElement.addEventListener('click', function() {
                     const detailsDiv = this.querySelector('.preoperative-details');
                     detailsDiv.classList.toggle('hidden');
-
-                    // 切换边框颜色
                     if (detailsDiv.classList.contains('hidden')) {
                         this.classList.remove('border-primary');
                         this.classList.add('border-gray-300');
@@ -501,7 +469,6 @@
                     }
                 });
 
-                // 子任务复选框逻辑
                 const subtaskCheckboxes = taskElement.querySelectorAll('.preoperative-subtask-checkbox');
                 subtaskCheckboxes.forEach(checkbox => {
                     checkbox.addEventListener('change', function() {
@@ -510,14 +477,14 @@
                         const statusElement = taskElement.querySelector('.preoperative-status');
                         if (allChecked) {
                             statusElement.textContent = '已完成';
-                            statusElement.classList.remove('bg-gray-100', 'text-gray-600');
-                            statusElement.classList.add('bg-green-100', 'text-green-800');
+                            statusElement.classList.remove('bg-gray-100','text-gray-600');
+                            statusElement.classList.add('bg-green-100','text-green-800');
                             taskElement.classList.remove('border-gray-300');
                             taskElement.classList.add('border-green-400');
                         } else {
                             statusElement.textContent = '未完成';
-                            statusElement.classList.remove('bg-green-100', 'text-green-800');
-                            statusElement.classList.add('bg-gray-100', 'text-gray-600');
+                            statusElement.classList.remove('bg-green-100','text-green-800');
+                            statusElement.classList.add('bg-gray-100','text-gray-600');
                             taskElement.classList.remove('border-green-400');
                             taskElement.classList.add('border-gray-300');
                         }
@@ -526,60 +493,33 @@
             });
         }
 
-function setupTabs() {
-    const tabs = ['rehabilitation', 'videos', 'settings'];
-
-    tabs.forEach(tab => {
-        // 顶部标签（如果有的话）
-        const tabEl = document.getElementById(`tab-${tab}`);
-        if(tabEl) {
-            tabEl.addEventListener('click', function() {
-                switchTab(tab);
+        // 底部 tab 切换
+        function setupTabs() {
+            const tabs = ['rehabilitation', 'videos', 'settings'];
+            tabs.forEach(tab => {
+                const navEl = document.getElementById(`nav-${tab}`);
+                if(navEl) {
+                    navEl.addEventListener('click', function() {
+                        switchTab(tab);
+                    });
+                }
             });
         }
-
-        // 底部导航（关键修复：这里之前没生效！）
-        const navEl = document.getElementById(`nav-${tab}`);
-        if(navEl) {
-            navEl.addEventListener('click', function() {
-                switchTab(tab);
+        function switchTab(activeTab) {
+            const tabs = ['rehabilitation', 'videos', 'settings'];
+            tabs.forEach(tab => {
+                const navEl = document.getElementById(`nav-${tab}`);
+                navEl.classList.remove('text-primary');
+                navEl.classList.add('text-gray-500');
+                document.getElementById(`content-${tab}`).classList.add('hidden');
             });
-        }
-    });
-}
-function switchTab(activeTab) {
-    const tabs = ['rehabilitation', 'videos', 'settings'];
-    tabs.forEach(tab => {
-        // 顶部标签样式
-        const tabEl = document.getElementById(`tab-${tab}`);
-        if(tabEl) {
-            tabEl.classList.remove('border-primary', 'text-primary');
-            tabEl.classList.add('border-transparent', 'text-gray-500');
+            const activeNavEl = document.getElementById(`nav-${activeTab}`);
+            activeNavEl.classList.remove('text-gray-500');
+            activeNavEl.classList.add('text-primary');
+            document.getElementById(`content-${activeTab}`).classList.remove('hidden');
         }
 
-        // 底部导航图标颜色
-        const navEl = document.getElementById(`nav-${tab}`);
-        navEl.classList.remove('text-primary');
-        navEl.classList.add('text-gray-500');
-
-        // 内容区域隐藏
-        document.getElementById(`content-${tab}`).classList.add('hidden');
-    });
-
-    // 激活当前 tab
-    const activeTabEl = document.getElementById(`tab-${activeTab}`);
-    if(activeTabEl) {
-        activeTabEl.classList.remove('border-transparent', 'text-gray-500');
-        activeTabEl.classList.add('border-primary', 'text-primary');
-    }
-
-    const activeNavEl = document.getElementById(`nav-${activeTab}`);
-    activeNavEl.classList.remove('text-gray-500');
-    activeNavEl.classList.add('text-primary');
-
-    document.getElementById(`content-${activeTab}`).classList.remove('hidden');
-}
-
+        // 字体大小
         function setupFontSizeSlider() {
             const slider = document.getElementById('fontSizeSlider');
             const display = document.getElementById('fontSizeDisplay');
@@ -607,291 +547,202 @@ function switchTab(activeTab) {
                 });
             });
         }
-// 渲染术后任务
-(function renderPostopTasks() {
-    const container = document.getElementById('postopTaskList');
-    if (!container) return;
 
-    const tasks = [
-        "饮食恢复",
-        "踝泵运动",
-        "体位摆放",
-        "下床活动",
-        "正确咳嗽",
-        "排气管理",
-        "术后第5天伤口护理",
-        "更换敷贴"
-    ];
+        // 渲染术后任务
+        (function renderPostopTasks() {
+            const container = document.getElementById('postopTaskList');
+            if (!container) return;
+            const tasks = [
+                "饮食恢复","踝泵运动","体位摆放","下床活动","正确咳嗽","排气管理","术后第5天伤口护理","更换敷贴"
+            ];
+            tasks.forEach((task, index) => {
+                const html = `
+                <div class="bg-blue-50 p-3 rounded cursor-pointer" onclick="openPostopModal(${index+1})">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium">${index+1}. ${task}</span>
+                        <input type="checkbox" class="task-checkbox" onclick="event.stopPropagation()">
+                    </div>
+                </div>`;
+                container.insertAdjacentHTML('beforeend', html);
+            });
+        })();
 
-    tasks.forEach((task, index) => {
-        const html = `
-        <div class="bg-blue-50 p-3 rounded cursor-pointer" onclick="openPostopModal(${index+1})">
-            <div class="flex justify-between items-center">
-                <span class="text-sm font-medium">${index+1}. ${task}</span>
-                <input type="checkbox" class="task-checkbox" onclick="event.stopPropagation()">
-            </div>
-        </div>`;
-        container.insertAdjacentHTML('beforeend', html);
-    });
-})();
-
-
-// 弹窗逻辑（核心）
-function openPostopModal(type){
-
-    const map = {
-
-        1: {
-            text: `
-您是局部麻醉患者，术后若无明显不适，即可开始进食（如硬膜外麻醉等肛门排气后大约术后6~12h可恢复饮食）<br><br>
-建议：温水、米汤、稀粥、烂面条、蒸蛋羹、香蕉、苹果泥、萝卜汤<br><br>
-⚠️避免：煮鸡蛋、炒鸡蛋、牛奶、豆浆、生萝卜、豆制品、油腻食物<br>
-⚠️半年内严格避免饮酒
-            `,
-            img: "饮食.jpg"
-        },
-
-        2: {
-            text:`【术护康团队原创】术后半卧位进行踝泵运动，预防血栓`,
-            action:'bed-activity'
-        },
-        3: {
-    text:`【术护康团队原创】膝下垫枕头，减少切口张力，避免腹压增高，降低复发风险`,
-    img: "tiwei.jpg",
-    action:'breathing'  // 加上这一行，自动调用AI指导
-    },
-
-        4: {
-            text:`【术护康团队原创】可自行上下床，动作轻缓`,
-            action:'walking'
-        },
-
-        5: {
-            text:`【术护康团队原创】咳嗽时用手按压伤口，避免腹压升高`,
-            action:'breathing-advanced'
-        },
-
-        6: {
-            text:`【术护康团队原创】排气后恢复正常饮食，可嚼口香糖促进排气`,
-            img: "排气.jpg"
-        },
-
-        7: {
-            text:`【引用自邵阳市妇幼保健院】第5天可携带防水敷贴洗澡，注意感染迹象（红肿、渗液、发热）`,
-            action:'wound-care'
-        },
-
-        8: {
-            text:`【引用自邵阳市妇幼保健院】敷贴两天更换一次，直至愈合`,
-            action:'wound-cared'
-        }
-    };
-
-    const data = map[type];
-
-    let mediaHTML = '';
-if (data.img) {
-    // 静态图片 + AI指导（和视频指导一样）
-    mediaHTML = `
-        <div class="mt-3 w-full">
-            <img src="${data.img}" class="w-full rounded-lg border border-gray-200" alt="指导示意图">
-        </div>
-
-        <!-- AI体位纠正模块（和视频指导完全一致） -->
-        <div class="border-t pt-3 mt-3">
-            <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center">
-                <i class="fa fa-camera text-primary mr-2"></i>AI体位纠正
-            </h4>
-            <div class="bg-blue-50 p-3 rounded-lg">
-                <p class="text-xs text-gray-700 mb-2">动作完成后，请正面拍摄您的体位进行AI分析</p>
-                <div class="relative w-full h-32 bg-white border border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-2">
-                    <i class="fa fa-camera text-gray-400 text-3xl"></i>
-                    <input type="file" id="modalPositionPhoto" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
-                </div>
-                <div class="flex justify-between">
-                    <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
-                        <i class="fa fa-volume-up mr-1"></i>语音点播
-                    </button>
-                    <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
-                        下一步 <i class="fa fa-arrow-right ml-1"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-} else if (data.action) {
-        // 视频按钮
-        mediaHTML = `
-            <button onclick="createAIGuideModal('${data.action}')"
-            class="mt-3 w-full bg-primary text-white py-2 rounded">
-            ▶ 观看视频与AI辅助指导
-            </button>
-        `;
-    }
-
-    const html = `
-    <div id="postopModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white rounded-lg w-11/12 max-w-md p-4">
-            <h3 class="text-lg font-semibold text-primary mb-3">术后指导</h3>
-
-            <p class="text-sm text-gray-700">${data.text}</p>
-
-            ${mediaHTML}
-
-            <button onclick="document.getElementById('postopModal').remove()"
-            class="mt-4 w-full bg-gray-200 py-2 rounded">
-            关闭
-            </button>
-        </div>
-    </div>`;
-
-    document.body.insertAdjacentHTML('beforeend', html);
-    // 绑定AI弹窗按钮事件（拍照、语音、下一步）
-    bindModalEvents();
-}
-        // 创建AI指导弹窗 - 包含真实视频
-        function createAIGuideModal(actionType) {
-            // 【在此处配置不同任务对应的真实视频 ID】
-            const actionInfo = {
-                'bed-activity': {
-                    title: '踝泵运动',
-                    description: '术后早期进行踝泵运动可有效预防下肢深静脉血栓。请跟随视频节奏练习。',
-                    bvid: 'BV1ujAczGEh9' // 替换为真实的踝泵运动视频 ID
-                },
-                'breathing': {
-                    title: '体位摆放',
-                    description: '可膝下垫枕头/被子，减小切口张力，减少术后复发',
-                    bvid: 'BV1B7411m7LV' // 替换为真实的呼吸训练视频 ID
-                },
-                'walking': {
-                    title: '术后正确下床姿势',
-                    description: '错误的下床姿势会增加腹压。请记住“侧身 - 手撑 - 慢起”三部曲。',
-                    bvid: 'BV1WKAFzFEEk' // 替换为真实的下床指导视频 ID
-                },
-                'wound-care': {
-                    title: '伤口护理与观察',
-                    description: '保持伤口清洁干燥，观察有无红肿、渗液。',
-                    bvid: 'BV1ADAFzFET1' // 替换为真实的伤口护理视频 ID
-                },
-                'wound-cared': {
-                    title: '更换敷贴',
-                    description: '保持伤口清洁干燥，观察有无红肿、渗液。',
-                    bvid: 'BV1wDAFzFEq9' // 替换为真实的伤口护理视频 ID
-                },
-                'light-exercise': {
-                    title: '术后早期步行指导',
-                    description: '术后第 3 天开始适度步行，促进肠道蠕动恢复。',
-                    bvid: 'BV1wY6LB7EGL' // 可复用或替换
-                },
-                'diet': {
-                    title: '术后饮食过渡指南',
-                    description: '从流质到半流质再到普食的过渡原则。预防便秘，避免腹压增高。',
-                    bvid: 'BV1wY6LB7EGL' // 替换为真实的术后饮食视频 ID
-                },
-                'breathing-advanced': {
-                    title: '有效咳嗽与伤口保护',
-                    description: '咳嗽时用手按压伤口区域，可显著减轻疼痛并保护补片。',
-                    bvid: 'BV19MAcz2Ejy' // 替换为真实的咳嗽保护视频 ID
+        // AI 弹窗绑定事件
+        function bindModalEvents() {
+            document.getElementById('modalPositionPhoto').addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    alert('AI体位分析模拟：正在分析您的体位...');
+                    setTimeout(() => alert('AI分析结果：体位正确，请继续保持。'), 1500);
                 }
+            });
+            document.getElementById('modalVoiceGuideBtn').addEventListener('click', () => {
+                alert('语音指导模拟：正在播放体位指导语音');
+            });
+            document.getElementById('modalNextStepBtn').addEventListener('click', () => {
+                alert('已完成当前训练指导');
+                document.getElementById('postopModal').remove();
+            });
+        }
+
+        // 术后弹窗（核心：只给体位加AI）
+        function openPostopModal(type){
+            const map = {
+                1: {
+                    text: `您是局部麻醉患者，术后若无明显不适，即可开始进食（如硬膜外麻醉等肛门排气后大约术后6~12h可恢复饮食）<br><br>建议：温水、米汤、稀粥、烂面条、蒸蛋羹、香蕉、苹果泥、萝卜汤<br><br>⚠️避免：煮鸡蛋、炒鸡蛋、牛奶、豆浆、生萝卜、豆制品、油腻食物<br>⚠️半年内严格避免饮酒`,
+                    img: "饮食.jpg"
+                },
+                2: { text:`【术护康团队原创】术后半卧位进行踝泵运动，预防血栓`, action:'bed-activity' },
+                3: {
+                    text:`【术护康团队原创】膝下垫枕头，减少切口张力，避免腹压增高，降低复发风险`,
+                    img: "tiwei.jpg",
+                    needAI: true
+                },
+                4: { text:`【术护康团队原创】可自行上下床，动作轻缓`, action:'walking' },
+                5: { text:`【术护康团队原创】咳嗽时用手按压伤口，避免腹压升高`, action:'breathing-advanced' },
+                6: { text:`【术护康团队原创】排气后恢复正常饮食，可嚼口香糖促进排气`, img: "排气.jpg" },
+                7: { text:`【引用自邵阳市妇幼保健院】第5天可携带防水敷贴洗澡，注意感染迹象（红肿、渗液、发热）`, action:'wound-care' },
+                8: { text:`【引用自邵阳市妇幼保健院】敷贴两天更换一次，直至愈合`, action:'wound-cared' }
             };
 
-            const info = actionInfo[actionType] || { title: 'AI指导', description: '请按照指导完成动作.', videoUrl: 'https://www.bilibili.com/video/BV1wY6LB7EGL' };
+            const data = map[type];
+            let mediaHTML = '';
+
+            if (data.img) {
+                mediaHTML = `
+                <div class="mt-3 w-full">
+                    <img src="${data.img}" class="w-full rounded-lg border border-gray-200" alt="指导示意图">
+                </div>`;
+
+                // ✅ 只有体位 needAI:true 才显示AI模块
+                if (data.needAI) {
+                    mediaHTML += `
+                    <div class="border-t pt-3 mt-3">
+                        <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center">
+                            <i class="fa fa-camera text-primary mr-2"></i>AI体位纠正
+                        </h4>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-xs text-gray-700 mb-2">动作完成后，请正面拍摄您的体位进行AI分析</p>
+                            <div class="relative w-full h-32 bg-white border border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-2">
+                                <i class="fa fa-camera text-gray-400 text-3xl"></i>
+                                <input type="file" id="modalPositionPhoto" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                            </div>
+                            <div class="flex justify-between">
+                                <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
+                                    <i class="fa fa-volume-up mr-1"></i>语音点播
+                                </button>
+                                <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
+                                    下一步 <i class="fa fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+            } else if (data.action) {
+                mediaHTML = `
+                <button onclick="createAIGuideModal('${data.action}')" class="mt-3 w-full bg-primary text-white py-2 rounded">
+                ▶ 观看视频与AI辅助指导
+                </button>`;
+            }
+
+            const html = `
+            <div id="postopModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white rounded-lg w-11/12 max-w-md p-4">
+                    <h3 class="text-lg font-semibold text-primary mb-3">术后指导</h3>
+                    <p class="text-sm text-gray-700">${data.text}</p>
+                    ${mediaHTML}
+                    <button onclick="document.getElementById('postopModal').remove()" class="mt-4 w-full bg-gray-200 py-2 rounded">关闭</button>
+                </div>
+            </div>`;
+
+            document.body.insertAdjacentHTML('beforeend', html);
+            if (data.needAI) bindModalEvents();
+        }
+
+        // AI视频指导弹窗
+        function createAIGuideModal(actionType) {
+            const actionInfo = {
+                'bed-activity': { title: '踝泵运动', description: '术后早期进行踝泵运动可有效预防下肢深静脉血栓。请跟随视频节奏练习。', bvid: 'BV1ujAczGEh9' },
+                'breathing': { title: '体位摆放', description: '可膝下垫枕头/被子，减小切口张力，减少术后复发', bvid: 'BV1B7411m7LV' },
+                'walking': { title: '术后正确下床姿势', description: '错误的下床姿势会增加腹压。请记住“侧身 - 手撑 - 慢起”三部曲。', bvid: 'BV1WKAFzFEEk' },
+                'wound-care': { title: '伤口护理与观察', description: '保持伤口清洁干燥，观察有无红肿、渗液。', bvid: 'BV1ADAFzFET1' },
+                'wound-cared': { title: '更换敷贴', description: '保持伤口清洁干燥，观察有无红肿、渗液。', bvid: 'BV1wDAFzFEq9' },
+                'light-exercise': { title: '术后早期步行指导', description: '术后第 3 天开始适度步行，促进肠道蠕动恢复。', bvid: 'BV1wY6LB7EGL' },
+                'diet': { title: '术后饮食过渡指南', description: '从流质到半流质再到普食的过渡原则。预防便秘，避免腹压增高。', bvid: 'BV1wY6LB7EGL' },
+                'breathing-advanced': { title: '有效咳嗽与伤口保护', description: '咳嗽时用手按压伤口区域，可显著减轻疼痛并保护补片。', bvid: 'BV19MAcz2Ejy' }
+            };
+            const info = actionInfo[actionType] || { title: 'AI指导', description: '请按照指导完成动作.', bvid: 'BV1wY6LB7EGL' };
 
             const modalHTML = `
-                <div id="aiGuideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-                    <div class="bg-white rounded-lg w-full max-w-md overflow-hidden">
-                        <div class="bg-primary text-white p-4 flex justify-between items-center">
-                            <h3 class="text-lg font-semibold">${info.title}</h3>
-                            <button id="closeModalBtn" class="text-white hover:text-gray-200"><i class="fa fa-times"></i></button>
+            <div id="aiGuideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                <div class="bg-white rounded-lg w-full max-w-md overflow-hidden">
+                    <div class="bg-primary text-white p-4 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold">${info.title}</h3>
+                        <button id="closeModalBtn" class="text-white hover:text-gray-200"><i class="fa fa-times"></i></button>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-sm text-gray-700 mb-4">${info.description}</p>
+                        <div class="video-container mb-4">
+                            <iframe src="//player.bilibili.com/player.html?bvid=${info.bvid}&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="rounded-lg"></iframe>
                         </div>
-                        <div class="p-4">
-                            <p class="text-sm text-gray-700 mb-4">${info.description}</p>
-                            <div class="video-container mb-4" style="padding-bottom: 56.25%;">
-                                <iframe src="//player.bilibili.com/player.html?bvid=${info.bvid}&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="rounded-lg"></iframe>
-                            </div>
-                            <div class="border-t pt-3 mt-3">
-                                <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center"><i class="fa fa-camera text-primary mr-2"></i>AI体位纠正</h4>
-                                <div class="bg-blue-50 p-3 rounded-lg">
-                                    <p class="text-xs text-gray-700 mb-2">动作完成后，请正面拍摄您的体位进行AI分析</p>
-                                    <div class="relative w-full h-32 bg-white border border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-2">
-                                        <i class="fa fa-camera text-gray-400 text-3xl"></i>
-                                        <input type="file" id="modalPositionPhoto" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center"><i class="fa fa-volume-up mr-1"></i>语音点播</button>
-                                        <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">下一步 <i class="fa fa-arrow-right ml-1"></i></button>
-                                    </div>
+                        <div class="border-t pt-3 mt-3">
+                            <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center"><i class="fa fa-camera text-primary mr-2"></i>AI体位纠正</h4>
+                            <div class="bg-blue-50 p-3 rounded-lg">
+                                <p class="text-xs text-gray-700 mb-2">动作完成后，请正面拍摄您的体位进行AI分析</p>
+                                <div class="relative w-full h-32 bg-white border border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-2">
+                                    <i class="fa fa-camera text-gray-400 text-3xl"></i>
+                                    <input type="file" id="modalPositionPhoto" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                </div>
+                                <div class="flex justify-between">
+                                    <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center"><i class="fa fa-volume-up mr-1"></i>语音点播</button>
+                                    <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">下一步 <i class="fa fa-arrow-right ml-1"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            `;
+            </div>`;
 
             document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-            document.getElementById('closeModalBtn').addEventListener('click', function() {
+            document.getElementById('closeModalBtn').addEventListener('click', () => {
                 document.getElementById('aiGuideModal').remove();
             });
-
             document.getElementById('modalPositionPhoto').addEventListener('change', function(e) {
                 if (e.target.files && e.target.files[0]) {
                     alert('AI体位分析模拟：正在分析您的体位...');
-                    setTimeout(() => {
-                        alert('AI分析结果：体位正确，请继续保持。');
-                    }, 1500);
+                    setTimeout(() => alert('AI分析结果：体位正确，请继续保持。'), 1500);
                 }
             });
-
-            document.getElementById('modalVoiceGuideBtn').addEventListener('click', function() {
+            document.getElementById('modalVoiceGuideBtn').addEventListener('click', () => {
                 alert('语音指导模拟：正在播放体位指导语音');
             });
-
-            document.getElementById('modalNextStepBtn').addEventListener('click', function() {
+            document.getElementById('modalNextStepBtn').addEventListener('click', () => {
                 alert('已完成当前训练指导');
                 document.getElementById('aiGuideModal').remove();
             });
         }
 
-        // 设置任务勾选功能 - 完善版
+        // 任务勾选
         function setupTaskCheckboxes() {
             const checkboxes = document.querySelectorAll('.task-checkbox:not([disabled])');
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     const taskContainer = this.closest('.bg-blue-50');
-                    const taskText = taskContainer.querySelector('.task-text');
-                    const statusBadge = taskContainer.querySelector('.status-badge');
-
                     if (this.checked) {
-                        taskText.classList.add('line-through', 'text-gray-400');
-                        if (statusBadge) {
-                            statusBadge.textContent = '已完成';
-                            statusBadge.classList.remove('bg-blue-100', 'text-blue-800');
-                            statusBadge.classList.add('bg-green-100', 'text-green-800');
-                        }
-                        const completionTime = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
-                        alert(`任务已标记为完成！完成时间：${completionTime}记录已自动保存。`);
+                        alert('任务已标记为完成！记录已自动保存。');
                     } else {
-                        taskText.classList.remove('line-through', 'text-gray-400');
-                        if (statusBadge) {
-                            statusBadge.textContent = '待完成';
-                            statusBadge.classList.remove('bg-green-100', 'text-green-800');
-                            statusBadge.classList.add('bg-blue-100', 'text-blue-800');
-                        }
                         alert('任务已取消完成，您可以稍后重新标记。');
                     }
                 });
             });
         }
 
+        // 问题反馈
         function setupFeedbackForm() {
             const feedbackForm = document.getElementById('feedbackForm');
             if (feedbackForm) {
                 feedbackForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    const feedbackType = document.getElementById('feedbackType').value;
                     const feedbackContent = document.getElementById('feedbackContent').value;
-
                     if (!feedbackContent.trim()) {
                         alert('请输入您的问题描述');
                         return;
@@ -906,7 +757,6 @@ if (data.img) {
                         const fileInput = this.querySelector('input[type="file"]');
                         fileInput.click();
                     });
-
                     const fileInput = button.querySelector('input[type="file"]');
                     fileInput.addEventListener('change', function(e) {
                         if (e.target.files && e.target.files[0]) {
@@ -917,16 +767,12 @@ if (data.img) {
                                 img.className = 'w-full h-full object-cover rounded-md';
                                 button.innerHTML = '';
                                 button.appendChild(img);
-
                                 const deleteBtn = document.createElement('button');
                                 deleteBtn.className = 'absolute top-1 right-1 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center text-xs';
                                 deleteBtn.innerHTML = '×';
                                 deleteBtn.onclick = function(e) {
                                     e.stopPropagation();
                                     button.innerHTML = '<i class="fa fa-plus text-gray-400"></i><input type="file" accept="image/*" class="hidden">';
-                                    const newFileInput = button.querySelector('input[type="file"]');
-                                    newFileInput.addEventListener('change', fileInput.onchange);
-                                    button.addEventListener('click', function() { newFileInput.click(); });
                                 };
                                 button.style.position = 'relative';
                                 button.appendChild(deleteBtn);
