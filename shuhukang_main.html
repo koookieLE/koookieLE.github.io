@@ -634,62 +634,49 @@ function switchTab(activeTab) {
         container.insertAdjacentHTML('beforeend', html);
     });
 })();
-
-
-// 弹窗逻辑（核心）
-function openPostopModal(type){
-
-    const map = {
-
-        1: {
-            text: `
+const map = {
+    1: {
+        text: `
 您是局部麻醉患者，术后若无明显不适，即可开始进食（如硬膜外麻醉等肛门排气后大约术后6~12h可恢复饮食）<br><br>
 建议：温水、米汤、稀粥、烂面条、蒸蛋羹、香蕉、苹果泥、萝卜汤<br><br>
 ⚠️避免：煮鸡蛋、炒鸡蛋、牛奶、豆浆、生萝卜、豆制品、油腻食物<br>
 ⚠️半年内严格避免饮酒
             `,
-            // 👉 1.饮食恢复：在这里替换为你的静态图片地址
-            img: "饮食.jpg"
-        },
+        img: "饮食.jpg" // 直接根目录，对应饮食恢复
+    },
+    2: {
+        text:`【术护康团队原创】术后半卧位进行踝泵运动，预防血栓`,
+        action:'bed-activity'
+    },
+    3: {
+        text:`【术护康团队原创】膝下垫枕头，减少切口张力`,
+        img: "tiwei.jpg" // 对应体位摆放
+    },
+    4: {
+        text:`【术护康团队原创】可自行上下床，动作轻缓`,
+        action:'walking'
+    },
+    5: {
+        text:`【术护康团队原创】咳嗽时用手按压伤口，避免腹压升高`,
+        action:'breathing-advanced'
+    },
+    6: {
+        text:`【术护康团队原创】排气后恢复正常饮食，可嚼口香糖促进排气`,
+        img: "排气.jpg" // 对应排气管理
+    },
+    7: {
+        text:`【引用自邵阳市妇幼保健院】第5天可携带防水敷贴洗澡，注意感染迹象（红肿、渗液、发热）`,
+        action:'wound-care'
+    },
+    8: {
+        text:`【引用自邵阳市妇幼保健院】敷贴两天更换一次，直至愈合`,
+        action:'wound-cared'
+    }
+};
+// 弹窗逻辑（核心）
+function openPostopModal(type){
 
-        2: {
-            text:`【术护康团队原创】术后半卧位进行踝泵运动，预防血栓`,
-            action:'bed-activity'
-        },
-
-        3: {
-            text:`【术护康团队原创】膝下垫枕头，减少切口张力`,
-            // 👉 3.体位摆放：在这里替换为你的静态图片地址
-            img: "tiwei.jpg"
-        },
-
-        4: {
-            text:`【术护康团队原创】可自行上下床，动作轻缓`,
-            action:'walking'
-        },
-
-        5: {
-            text:`【术护康团队原创】咳嗽时用手按压伤口，避免腹压升高`,
-            action:'breathing-advanced'
-        },
-
-        6: {
-            text:`【术护康团队原创】排气后恢复正常饮食，可嚼口香糖促进排气`,
-            // 👉 6.排气管理：在这里替换为你的静态图片地址
-            img: "排气.jpg"
-        },
-
-        7: {
-            text:`【引用自邵阳市妇幼保健院】第5天可携带防水敷贴洗澡，注意感染迹象（红肿、渗液、发热）`,
-            action:'wound-care'
-        },
-
-        8: {
-            text:`【引用自邵阳市妇幼保健院】敷贴两天更换一次，直至愈合`,
-            action:'wound-cared'
-        }
-    };
-
+    https://koookieLE.github.io/tiwei.jpghttps://koookieLE.github.io/排气.jpg
     const data = map[type];
 
     let mediaHTML = '';
