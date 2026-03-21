@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -28,33 +29,14 @@
             }
         }
     </script>
+
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .card-shadow {
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            }
-            .progress-ring-circle {
-                transition: stroke-dashoffset 0.35s;
-                transform: rotate(-90deg);
-                transform-origin: 50% 50%;
-            }
-            .video-container {
-                position: relative;
-                padding-bottom: 56.25%;
-                height: 0;
-                overflow: hidden;
-                border-radius: 0.5rem;
-            }
-            .video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
+            .content-auto { content-visibility: auto; }
+            .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+            .progress-ring-circle { transition: stroke-dashoffset 0.35s; transform: rotate(-90deg); transform-origin: 50% 50%; }
+            .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 0.5rem; }
+            .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         }
     </style>
 </head>
@@ -78,22 +60,7 @@
 
     <!-- 主内容区域 -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- 标签页导航 - 移动端适配 -->
-        <div class="mb-4">
-            <div class="border-b border-gray-200">
-                <nav class="-mb-px flex space-x-4" aria-label="Tabs">
-                    <button id="tab-rehabilitation" class="whitespace-nowrap py-3 px-1 border-b-2 border-primary font-medium text-sm text-primary">
-                        任务导航
-                    </button>
-                    <button id="tab-videos" class="whitespace-nowrap py-3 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
-                        问题反馈
-                    </button>
-                    <button id="tab-settings" class="whitespace-nowrap py-3 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
-                        设置
-                    </button>
-                </nav>
-            </div>
-        </div>
+
 
         <!-- 标签页内容 -->
         <div class="tab-content">
@@ -107,7 +74,7 @@
                         </div>
                         <div class="ml-3">
                             <h2 class="text-lg font-semibold text-gray-800" id="patientName">张三</h2>
-                            <p class="text-sm text-gray-600" id="patientId">住院号: 20250721-001</p>
+                            <p class="text-sm text-gray-600" id="patientId">住院号: 20260411-001</p>
                             <p class="text-xs text-gray-500 mt-1">诊断：右侧腹股沟斜疝 | 手术：腹腔镜疝修补术(TAPP)</p>
                         </div>
                     </div>
@@ -118,11 +85,11 @@
                         </div>
                         <div class="bg-blue-50 p-2 rounded">
                             <span class="text-gray-600">手术日期:</span>
-                            <span class="font-medium text-primary">2026/03/15</span>
+                            <span class="font-medium text-primary">2026/04/15</span>
                         </div>
                         <div class="bg-blue-50 p-2 rounded">
                             <span class="text-gray-600">预计出院:</span>
-                            <span class="font-medium text-primary" id="estimatedCompletion">2026/03/20</span>
+                            <span class="font-medium text-primary" id="estimatedCompletion">2026/04/20</span>
                         </div>
                         <div class="bg-blue-50 p-2 rounded">
                             <span class="text-gray-600">主刀医生:</span>
@@ -130,250 +97,196 @@
                         </div>
                     </div>
                 </div>
-                <!-- 术前进度卡片 (已优化为腹股沟疝专科内容) -->
+
+                <!-- 术前进度卡片 (已修改为新内容) -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
                     <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fa fa-calendar-check-o text-primary mr-2"></i>术前准备 (ERAS路径)
+                        <i class="fa fa-calendar-check-o text-primary mr-2"></i>
+                        一、术前任务指南
                     </h3>
+                    <p class="text-xs text-gray-500 mb-3">点击后查看提醒内容</p>
                     <div class="space-y-3">
-                        <!-- 任务1：术前评估与检查 -->
-                        <div class="border-l-4 border-green-400 pl-3 py-1">
+                        <!-- 任务1：入院前物品购置 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">术前评估与检查</span>
-                                <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full preoperative-status">已完成</span>
+                                <span class="text-sm font-medium text-gray-800">1. 入院前物品购置</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
                             </div>
-                            <div class="mt-1 space-y-1">
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600" title="排除凝血障碍及感染风险">血常规、凝血功能、传染病筛查</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">收腹带 / 疝气专用腹带（术后当天要用）</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600" title="评估心肺功能耐受性">心电图、胸部X光</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">宽松、不勒肚子的衣物</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600" title="明确疝囊大小及内容物">腹股沟区超声检查</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
-                                </div>
-                                <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600">麻醉科术前访视评估</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">一次性护理垫</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 任务2：知情同意与健康教育 -->
-                        <div class="border-l-4 border-green-400 pl-3 py-1">
+                        <!-- 任务2：术前检查提醒 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">知情同意与宣教</span>
-                                <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full preoperative-status">已完成</span>
+                                <span class="text-sm font-medium text-gray-800">2. 术前检查提醒</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
                             </div>
-                            <div class="mt-1 space-y-1">
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
+                                <p class="text-xs text-red-500">请在4月1日～4月14日完成以下所有检查项目（标红）</p>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600">手术方案及补片使用告知</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">腹股沟超声</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600">术后疼痛管理及预期效果说明</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">血常规</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600">签署手术及麻醉知情同意书</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">血型</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">肝肾功能</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">尿常规</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">凝血功能</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">心电图</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">胸部X线</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">腹部超声</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">传染病指标</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 任务3：身体准备 (针对性优化) -->
-                        <div class="border-l-4 border-green-400 pl-3 py-1">
+                        <!-- 任务3：戒烟及用药调整提示 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
                             <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">身体与行为准备</span>
-                                <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full preoperative-status">已完成</span>
+                                <span class="text-sm font-medium text-gray-800">3. 戒烟及用药调整提示</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
                             </div>
-                            <div class="mt-1 space-y-1">
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600" title="预防术后咳嗽导致腹压增高">戒烟戒酒指导 (至少术前1周)</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">戒烟：请在4月1日前开始戒烟</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600" title="预防术后尿潴留">床上排便适应性训练</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">用药调整：如正在服用抗凝药（如阿司匹林、华法林等）或其他长期药物，请遵医嘱提前停药或替代治疗。</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- 任务4：灌肠准备 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-800">4. 灌肠准备 4月13日～4月14日</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
+                            </div>
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600" title="学习保护伤口的咳嗽方法">有效咳嗽与咳痰技巧训练</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">普外科护士会为您做灌肠准备，清洁肠道。医院会通知具体入院时间，请保持电话畅通。此前，请提前自行排便一次</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- 任务5：禁食禁饮 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-800">5. 4月14日晚上10点后开始禁食、禁饮</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
+                            </div>
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600">手术区皮肤清洁 (备皮)</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">4月14日晚上10点后开始禁食、禁饮</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- 任务6：准备入院物品 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-800">6. 准备入院物品！</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
+                            </div>
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
                                 <div class="flex items-center justify-between text-xs">
-                                    <span class="text-gray-600">术前禁食水 (禁食8h, 禁饮2h)</span>
-                                    <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                    <span class="text-gray-600">携带身份证、医保卡、检查报告、个人洗漱用品及提醒提前购置的物品！！！</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 任务7：入院 -->
+                        <div class="border-l-4 border-gray-300 pl-3 py-1 preoperative-task">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-gray-800">7. 4月15日空腹入院</span>
+                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full preoperative-status">未完成</span>
+                            </div>
+                            <div class="mt-2 space-y-1 hidden preoperative-details">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-600">4月15日空腹入院</span>
+                                    <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded preoperative-subtask-checkbox">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- 术后进度卡片 - 腹股沟疝真实案例 -->
-                <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
-                    <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fa fa-heartbeat text-primary mr-2"></i>术后康复
-                    </h3>
-                    <div class="space-y-3">
-                        <!-- 术后第一天 -->
-                        <div class="border-l-4 border-green-400 pl-3 py-1">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">术后第一天</span>
-                                <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full">已完成</span>
-                            </div>
-                            <div class="mt-2 space-y-2">
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800">床上活动训练</span>
-                                        <span class="text-xs px-2 py-0.5 bg-green-100 text-green-800 rounded-full">已完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">腹股沟疝术后早期床上活动可预防深静脉血栓，促进肠道功能恢复。包括踝泵运动、膝关节屈伸等。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="bed-activity">
-                                            <i class="fa fa-play-circle mr-1"></i>查看指导
-                                        </button>
-                                        <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
 
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800">呼吸训练</span>
-                                        <span class="text-xs px-2 py-0.5 bg-green-100 text-green-800 rounded-full">已完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">深呼吸训练可预防肺部并发症，促进麻醉气体排出。每小时进行5-10次深呼吸。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="breathing">
-                                            <i class="fa fa-play-circle mr-1"></i>查看指导
-                                        </button>
-                                        <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- 术后康复（新版动态任务） -->
+<div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
+    <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
+        <i class="fa fa-heartbeat text-primary mr-2"></i>
+        二、术后康复任务
+    </h3>
 
-                        <!-- 术后第二天 -->
-                        <div class="border-l-4 border-green-400 pl-3 py-1">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">术后第二天</span>
-                                <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full">已完成</span>
-                            </div>
-                            <div class="mt-2 space-y-2">
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800">下床活动训练</span>
-                                        <span class="text-xs px-2 py-0.5 bg-green-100 text-green-800 rounded-full">已完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">正确下床方法可避免腹压增高，保护手术区域。先侧身，再用手支撑坐起，最后缓慢站立。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="bed-activity">
-                                            <i class="fa fa-play-circle mr-1"></i>查看指导
-                                        </button>
-                                        <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
+    <div class="space-y-3">
 
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800">伤口护理指导</span>
-                                        <span class="text-xs px-2 py-0.5 bg-green-100 text-green-800 rounded-full">已完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">保持伤口清洁干燥，观察有无红肿、渗液。腹腔镜手术切口小，通常无需特殊处理。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="wound-care">
-                                            <i class="fa fa-play-circle mr-1"></i>查看指导
-                                        </button>
-                                        <input type="checkbox" checked disabled class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- 任务列表 -->
+        <script>
+            const postopTasks = [
+                "1. 饮食恢复",
+                "2. 踝泵运动",
+                "3. 体位摆放",
+                "4. 下床活动",
+                "5. 正确咳嗽",
+                "6. 排气管理",
+                "7. 第5天伤口护理",
+                "8. 更换敷贴"
+            ];
+        </script>
 
-                        <!-- 术后第三天（当前）- 患者可自主操作 -->
-                        <div class="border-l-4 border-primary pl-3 py-1">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">术后第三天 <span class="text-xs text-primary">(当前)</span></span>
-                                <span class="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded-full">进行中</span>
-                            </div>
-                            <div class="mt-2 space-y-2">
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800 task-text">轻度步行训练</span>
-                                        <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full status-badge">待完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">术后第3天可进行轻度步行活动，每次5-10分钟，每日3-4次。在病房走廊缓慢行走，避免提重物（&gt;5kg）至少4周。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="light-exercise">
-                                            <i class="fa fa-play-circle mr-1"></i>AI指导
-                                        </button>
-                                        <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
-
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800 task-text">饮食指导</span>
-                                        <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full status-badge">待完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">术后第3天可过渡到半流质或软食。多摄入高蛋白、高维生素食物，保持大便通畅，避免便秘增加腹压。推荐：粥、蛋羹、鱼肉泥、蔬菜泥。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="diet">
-                                            <i class="fa fa-play-circle mr-1"></i>AI指导
-                                        </button>
-                                        <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
-
-                                <div class="bg-blue-50 p-3 rounded">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-800 task-text">腹式呼吸训练</span>
-                                        <span class="text-xs px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full status-badge">待完成</span>
-                                    </div>
-                                    <p class="text-xs text-gray-600 mb-2">腹式呼吸可增强膈肌力量，促进腹腔血液循环。吸气时腹部隆起，呼气时腹部收缩，每次5-10分钟，每日3-4次。</p>
-                                    <div class="flex items-center justify-between">
-                                        <button class="text-xs text-primary flex items-center bg-blue-100 px-2 py-1 rounded ai-guide-btn" data-action="breathing-advanced">
-                                            <i class="fa fa-play-circle mr-1"></i>AI指导
-                                        </button>
-                                        <input type="checkbox" class="h-3 w-3 text-primary focus:ring-primary border-gray-300 rounded task-checkbox">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 术后第四至七天（预告） -->
-                        <div class="border-l-4 border-gray-300 pl-3 py-1 opacity-75">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm font-medium text-gray-800">术后第4-7天（预告）</span>
-                                <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">未开始</span>
-                            </div>
-                            <div class="mt-2 space-y-2">
-                                <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
-                                    <span class="text-xs text-gray-600">逐渐增加步行时间至每次15-20分钟</span>
-                                    <i class="fa fa-lock text-gray-400"></i>
-                                </div>
-                                <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
-                                    <span class="text-xs text-gray-600">学习正确的咳嗽和打喷嚏姿势（用手按压伤口）</span>
-                                    <i class="fa fa-lock text-gray-400"></i>
-                                </div>
-                                <div class="flex items-center justify-between bg-gray-50 p-2 rounded">
-                                    <span class="text-xs text-gray-600">了解出院后注意事项及复查时间</span>
-                                    <i class="fa fa-lock text-gray-400"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div id="postopTaskList"></div>
+    </div>
+</div>
 
                 <!-- 康复注意事项卡片 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
                     <h3 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fa fa-exclamation-triangle text-yellow-500 mr-2"></i>重要注意事项
+                        <i class="fa fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                        重要注意事项
                     </h3>
                     <div class="space-y-2 text-sm">
                         <div class="flex items-start">
@@ -405,7 +318,8 @@
                 <!-- 问题反馈表单 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow mb-4">
                     <h2 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fa fa-comment-medical text-primary mr-2"></i>向医护人员提问
+                        <i class="fa fa-comment-medical text-primary mr-2"></i>
+                        向医护人员提问
                     </h2>
                     <form id="feedbackForm" class="space-y-3">
                         <div>
@@ -440,16 +354,15 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                            提交问题
-                        </button>
+                        <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">提交问题</button>
                     </form>
                 </div>
 
                 <!-- 历史反馈记录 -->
                 <div class="bg-white rounded-lg shadow-md p-4 card-shadow">
                     <h2 class="text-md font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fa fa-history text-primary mr-2"></i>历史反馈记录
+                        <i class="fa fa-history text-primary mr-2"></i>
+                        历史反馈记录
                     </h2>
                     <div class="space-y-3">
                         <div class="border-l-4 border-blue-400 pl-3 py-1">
@@ -466,7 +379,6 @@
                                 <p class="text-gray-700">轻微红肿是正常现象，注意保持清洁干燥，避免摩擦。如果出现疼痛加剧或渗液增多，请立即联系我们。</p>
                             </div>
                         </div>
-
                         <div class="border-l-4 border-green-400 pl-3 py-1">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-gray-800">饮食问题</span>
@@ -489,7 +401,6 @@
             <div id="content-settings" class="tab-pane hidden">
                 <div class="bg-white rounded-lg shadow-md p-6 card-shadow">
                     <h2 class="text-lg font-semibold text-gray-800 mb-6">应用设置</h2>
-
                     <!-- 字体大小设置 -->
                     <div class="mb-8">
                         <h3 class="text-md font-medium text-gray-700 mb-4">字体大小</h3>
@@ -502,7 +413,6 @@
                             <span class="text-base font-medium text-gray-800" id="fontSizeDisplay">标准</span>
                         </div>
                     </div>
-
                     <!-- 康复报告设置 -->
                     <div class="mb-8">
                         <h3 class="text-md font-medium text-gray-700 mb-4">康复报告</h3>
@@ -517,13 +427,10 @@
                             </label>
                         </div>
                     </div>
-
                     <!-- 其他设置 -->
                     <div>
                         <h3 class="text-md font-medium text-gray-700 mb-4">其他</h3>
-                        <button id="logoutBtn" class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                            退出登录
-                        </button>
+                        <button id="logoutBtn" class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">退出登录</button>
                     </div>
                 </div>
             </div>
@@ -557,15 +464,7 @@
             if (!userName || !hospitalId) {
                 window.location.href = 'index.html';
             } else {
-                document.getElementById('userInfo').innerHTML = `
-                    <span class="text-sm text-gray-700 mr-2">${userName}</span>
-                    <button id="avatarBtn" class="flex-shrink-0">
-                        <div class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center">
-                            ${userName.charAt(0)}
-                        </div>
-                    </button>
-                `;
-
+                document.getElementById('userInfo').innerHTML = `<span class="text-sm text-gray-700 mr-2">${userName}</span><button id="avatarBtn" class="flex-shrink-0"><div class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center">${userName.charAt(0)}</div></button>`;
                 document.getElementById('patientName').textContent = userName;
                 document.getElementById('patientId').textContent = `住院号: ${hospitalId}`;
                 document.getElementById('patientInitial').textContent = userName.charAt(0);
@@ -574,89 +473,120 @@
             setupPreoperativeTaskCheckboxes();
             setupTabs();
             setupFontSizeSlider();
-
             document.getElementById('logoutBtn').addEventListener('click', function() {
                 localStorage.removeItem('userName');
                 localStorage.removeItem('hospitalId');
                 window.location.href = 'index.html';
             });
-
             setupAIGuideButtons();
             setupTaskCheckboxes();
             setupFeedbackForm();
         });
 
+        // 新增：用于展开/收起术前任务详情
         function setupPreoperativeTaskCheckboxes() {
-            const subtaskCheckboxes = document.querySelectorAll('.preoperative-subtask-checkbox');
-            subtaskCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    const parentTaskElement = this.closest('.border-l-4');
-                    const allCheckboxesInTask = parentTaskElement.querySelectorAll('.preoperative-subtask-checkbox');
-                    const allChecked = Array.from(allCheckboxesInTask).every(cb => cb.checked);
+            const taskElements = document.querySelectorAll('.preoperative-task');
+            taskElements.forEach(taskElement => {
+                taskElement.addEventListener('click', function() {
+                    const detailsDiv = this.querySelector('.preoperative-details');
+                    detailsDiv.classList.toggle('hidden');
 
-                    const statusElement = parentTaskElement.querySelector('.preoperative-status');
-                    if (allChecked) {
-                        statusElement.textContent = '已完成';
-                        statusElement.classList.remove('bg-gray-100', 'text-gray-800');
-                        statusElement.classList.add('bg-green-100', 'text-green-800');
-                        parentTaskElement.classList.remove('border-gray-300');
-                        parentTaskElement.classList.add('border-green-400');
+                    // 切换边框颜色
+                    if (detailsDiv.classList.contains('hidden')) {
+                        this.classList.remove('border-primary');
+                        this.classList.add('border-gray-300');
                     } else {
-                        statusElement.textContent = '未完成';
-                        statusElement.classList.remove('bg-green-100', 'text-green-800');
-                        statusElement.classList.add('bg-gray-100', 'text-gray-800');
-                        parentTaskElement.classList.remove('border-green-400');
-                        parentTaskElement.classList.add('border-gray-300');
+                        this.classList.remove('border-gray-300');
+                        this.classList.add('border-primary');
                     }
                 });
-            });
-        }
 
-        function setupTabs() {
-            const tabs = ['rehabilitation', 'videos', 'settings'];
-
-            tabs.forEach(tab => {
-                document.getElementById(`tab-${tab}`).addEventListener('click', function() {
-                    switchTab(tab);
+                // 子任务复选框逻辑
+                const subtaskCheckboxes = taskElement.querySelectorAll('.preoperative-subtask-checkbox');
+                subtaskCheckboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                        const allCheckboxesInTask = taskElement.querySelectorAll('.preoperative-subtask-checkbox');
+                        const allChecked = Array.from(allCheckboxesInTask).every(cb => cb.checked);
+                        const statusElement = taskElement.querySelector('.preoperative-status');
+                        if (allChecked) {
+                            statusElement.textContent = '已完成';
+                            statusElement.classList.remove('bg-gray-100', 'text-gray-600');
+                            statusElement.classList.add('bg-green-100', 'text-green-800');
+                            taskElement.classList.remove('border-gray-300');
+                            taskElement.classList.add('border-green-400');
+                        } else {
+                            statusElement.textContent = '未完成';
+                            statusElement.classList.remove('bg-green-100', 'text-green-800');
+                            statusElement.classList.add('bg-gray-100', 'text-gray-600');
+                            taskElement.classList.remove('border-green-400');
+                            taskElement.classList.add('border-gray-300');
+                        }
+                    });
                 });
-
-                document.getElementById(`nav-${tab}`).addEventListener('click', function() {
-                    switchTab(tab);
-                });
             });
         }
 
-        function switchTab(activeTab) {
-            const tabs = ['rehabilitation', 'videos', 'settings'];
+function setupTabs() {
+    const tabs = ['rehabilitation', 'videos', 'settings'];
 
-            tabs.forEach(tab => {
-                document.getElementById(`tab-${tab}`).classList.remove('border-primary', 'text-primary');
-                document.getElementById(`tab-${tab}`).classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
-
-                document.getElementById(`nav-${tab}`).classList.remove('text-primary');
-                document.getElementById(`nav-${tab}`).classList.add('text-gray-500');
-
-                document.getElementById(`content-${tab}`).classList.add('hidden');
+    tabs.forEach(tab => {
+        // 顶部标签（如果有的话）
+        const tabEl = document.getElementById(`tab-${tab}`);
+        if(tabEl) {
+            tabEl.addEventListener('click', function() {
+                switchTab(tab);
             });
-
-            document.getElementById(`tab-${activeTab}`).classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
-            document.getElementById(`tab-${activeTab}`).classList.add('border-primary', 'text-primary');
-
-            document.getElementById(`nav-${activeTab}`).classList.remove('text-gray-500');
-            document.getElementById(`nav-${activeTab}`).classList.add('text-primary');
-
-            document.getElementById(`content-${activeTab}`).classList.remove('hidden');
         }
+
+        // 底部导航（关键修复：这里之前没生效！）
+        const navEl = document.getElementById(`nav-${tab}`);
+        if(navEl) {
+            navEl.addEventListener('click', function() {
+                switchTab(tab);
+            });
+        }
+    });
+}
+function switchTab(activeTab) {
+    const tabs = ['rehabilitation', 'videos', 'settings'];
+    tabs.forEach(tab => {
+        // 顶部标签样式
+        const tabEl = document.getElementById(`tab-${tab}`);
+        if(tabEl) {
+            tabEl.classList.remove('border-primary', 'text-primary');
+            tabEl.classList.add('border-transparent', 'text-gray-500');
+        }
+
+        // 底部导航图标颜色
+        const navEl = document.getElementById(`nav-${tab}`);
+        navEl.classList.remove('text-primary');
+        navEl.classList.add('text-gray-500');
+
+        // 内容区域隐藏
+        document.getElementById(`content-${tab}`).classList.add('hidden');
+    });
+
+    // 激活当前 tab
+    const activeTabEl = document.getElementById(`tab-${activeTab}`);
+    if(activeTabEl) {
+        activeTabEl.classList.remove('border-transparent', 'text-gray-500');
+        activeTabEl.classList.add('border-primary', 'text-primary');
+    }
+
+    const activeNavEl = document.getElementById(`nav-${activeTab}`);
+    activeNavEl.classList.remove('text-gray-500');
+    activeNavEl.classList.add('text-primary');
+
+    document.getElementById(`content-${activeTab}`).classList.remove('hidden');
+}
 
         function setupFontSizeSlider() {
             const slider = document.getElementById('fontSizeSlider');
             const display = document.getElementById('fontSizeDisplay');
-
             if (slider && display) {
                 slider.addEventListener('input', function() {
                     const size = this.value;
                     document.body.style.fontSize = `${size}px`;
-
                     if (size < 14) {
                         display.textContent = '小';
                     } else if (size > 17) {
@@ -670,7 +600,6 @@
 
         function setupAIGuideButtons() {
             const aiButtons = document.querySelectorAll('.ai-guide-btn');
-
             aiButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const actionType = this.getAttribute('data-action');
@@ -678,30 +607,141 @@
                 });
             });
         }
+// 渲染术后任务
+(function renderPostopTasks() {
+    const container = document.getElementById('postopTaskList');
+    if (!container) return;
 
+    const tasks = [
+        "饮食恢复",
+        "踝泵运动",
+        "体位摆放",
+        "下床活动",
+        "正确咳嗽",
+        "排气管理",
+        "术后第5天伤口护理",
+        "更换敷贴"
+    ];
+
+    tasks.forEach((task, index) => {
+        const html = `
+        <div class="bg-blue-50 p-3 rounded cursor-pointer" onclick="openPostopModal(${index+1})">
+            <div class="flex justify-between items-center">
+                <span class="text-sm font-medium">${index+1}. ${task}</span>
+                <input type="checkbox" class="task-checkbox" onclick="event.stopPropagation()">
+            </div>
+        </div>`;
+        container.insertAdjacentHTML('beforeend', html);
+    });
+})();
+
+
+// 弹窗逻辑（核心）
+function openPostopModal(type){
+
+    const map = {
+
+        1: {
+            text: `
+您是局部麻醉患者，术后若无明显不适，即可开始进食（如硬膜外麻醉等肛门排气后大约术后6~12h可恢复饮食）<br><br>
+建议：温水、米汤、稀粥、烂面条、蒸蛋羹、香蕉、苹果泥、萝卜汤<br><br>
+⚠️避免：煮鸡蛋、炒鸡蛋、牛奶、豆浆、生萝卜、豆制品、油腻食物<br>
+⚠️半年内严格避免饮酒
+            `,
+            video:false
+        },
+
+        2: {
+            text:`【术护康团队原创】术后半卧位进行踝泵运动，预防血栓`,
+            action:'bed-activity' // 👉这里换视频
+        },
+
+        3: {
+            text:`【术护康团队原创】膝下垫枕头，减少切口张力`,
+            action:'breathing'
+        },
+
+        4: {
+            text:`【术护康团队原创】可自行上下床，动作轻缓`,
+            action:'walking' // 👉这里换视频
+        },
+
+        5: {
+            text:`【术护康团队原创】咳嗽时用手按压伤口，避免腹压升高`,
+            action:'breathing-advanced'
+        },
+
+        6: {
+            text:`【术护康团队原创】排气后恢复正常饮食，可嚼口香糖促进排气`,
+            action:'diet'
+        },
+
+        7: {
+            text:`【引用自邵阳市妇幼保健院】第5天可携带防水敷贴洗澡，注意感染迹象（红肿、渗液、发热）`,
+            action:'wound-care'
+        },
+
+        8: {
+            text:`【引用自邵阳市妇幼保健院】敷贴两天更换一次，直至愈合`,
+            action:'wound-cared'
+        }
+    };
+
+    const data = map[type];
+
+    const videoHTML = data.video===false ? '' : `
+        <button onclick="createAIGuideModal('${data.action}')"
+        class="mt-3 w-full bg-primary text-white py-2 rounded">
+        ▶ 观看视频与AI辅助指导
+        </button>
+    `;
+
+    const html = `
+    <div id="postopModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg w-11/12 max-w-md p-4">
+            <h3 class="text-lg font-semibold text-primary mb-3">术后指导</h3>
+
+            <p class="text-sm text-gray-700">${data.text}</p>
+
+            ${videoHTML}
+
+            <button onclick="document.getElementById('postopModal').remove()"
+            class="mt-4 w-full bg-gray-200 py-2 rounded">
+            关闭
+            </button>
+        </div>
+    </div>`;
+
+    document.body.insertAdjacentHTML('beforeend', html);
+}
         // 创建AI指导弹窗 - 包含真实视频
         function createAIGuideModal(actionType) {
-                        // 【在此处配置不同任务对应的真实视频 ID】
+            // 【在此处配置不同任务对应的真实视频 ID】
             const actionInfo = {
                 'bed-activity': {
-                    title: '床上活动与踝泵运动',
+                    title: '踝泵运动',
                     description: '术后早期进行踝泵运动可有效预防下肢深静脉血栓。请跟随视频节奏练习。',
-                    bvid: 'BV1jVwcznEF8' // 替换为真实的踝泵运动视频 ID
+                    bvid: 'BV1ujAczGEh9' // 替换为真实的踝泵运动视频 ID
                 },
                 'breathing': {
-                    title: '腹式呼吸训练',
-                    description: '深呼吸可增加肺活量，预防肺部感染。吸气时腹部隆起，呼气时腹部收缩。',
+                    title: '体位摆放',
+                    description: '可膝下垫枕头/被子，减小切口张力，减少术后复发',
                     bvid: 'BV1B7411m7LV' // 替换为真实的呼吸训练视频 ID
                 },
                 'walking': {
                     title: '术后正确下床姿势',
                     description: '错误的下床姿势会增加腹压。请记住“侧身 - 手撑 - 慢起”三部曲。',
-                    bvid: 'BV1jVwcznEF8' // 替换为真实的下床指导视频 ID
+                    bvid: 'BV1WKAFzFEEk' // 替换为真实的下床指导视频 ID
                 },
                 'wound-care': {
                     title: '伤口护理与观察',
                     description: '保持伤口清洁干燥，观察有无红肿、渗液。',
-                    bvid: 'BV1jVwcznEF8' // 替换为真实的伤口护理视频 ID
+                    bvid: 'BV1ADAFzFET1' // 替换为真实的伤口护理视频 ID
+                },
+                'wound-cared': {
+                    title: '更换敷贴',
+                    description: '保持伤口清洁干燥，观察有无红肿、渗液。',
+                    bvid: 'BV1wDAFzFEq9' // 替换为真实的伤口护理视频 ID
                 },
                 'light-exercise': {
                     title: '术后早期步行指导',
@@ -716,43 +756,26 @@
                 'breathing-advanced': {
                     title: '有效咳嗽与伤口保护',
                     description: '咳嗽时用手按压伤口区域，可显著减轻疼痛并保护补片。',
-                    bvid: 'BV1xx411X7Vz' // 替换为真实的咳嗽保护视频 ID
+                    bvid: 'BV19MAcz2Ejy' // 替换为真实的咳嗽保护视频 ID
                 }
             };
-            const info = actionInfo[actionType] || {
-                title: 'AI指导',
-                description: '请按照指导完成动作。',
-                videoUrl: 'https://www.bilibili.com/video/BV1wY6LB7EGL'
-            };
+
+            const info = actionInfo[actionType] || { title: 'AI指导', description: '请按照指导完成动作.', videoUrl: 'https://www.bilibili.com/video/BV1wY6LB7EGL' };
 
             const modalHTML = `
                 <div id="aiGuideModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
                     <div class="bg-white rounded-lg w-full max-w-md overflow-hidden">
                         <div class="bg-primary text-white p-4 flex justify-between items-center">
                             <h3 class="text-lg font-semibold">${info.title}</h3>
-                            <button id="closeModalBtn" class="text-white hover:text-gray-200">
-                                <i class="fa fa-times"></i>
-                            </button>
+                            <button id="closeModalBtn" class="text-white hover:text-gray-200"><i class="fa fa-times"></i></button>
                         </div>
-
                         <div class="p-4">
                             <p class="text-sm text-gray-700 mb-4">${info.description}</p>
-
                             <div class="video-container mb-4" style="padding-bottom: 56.25%;">
-                            <iframe src="//player.bilibili.com/player.html?bvid=${info.bvid}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-                                    scrolling="no"
-                                    border="0"
-                                    frameborder="no"
-                                    framespacing="0"
-                                    allowfullscreen="true"
-                                    class="rounded-lg">
-                                </iframe>
+                                <iframe src="//player.bilibili.com/player.html?bvid=${info.bvid}&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="rounded-lg"></iframe>
                             </div>
-
                             <div class="border-t pt-3 mt-3">
-                                <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center">
-                                    <i class="fa fa-camera text-primary mr-2"></i>AI体位纠正
-                                </h4>
+                                <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center"><i class="fa fa-camera text-primary mr-2"></i>AI体位纠正</h4>
                                 <div class="bg-blue-50 p-3 rounded-lg">
                                     <p class="text-xs text-gray-700 mb-2">动作完成后，请正面拍摄您的体位进行AI分析</p>
                                     <div class="relative w-full h-32 bg-white border border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-2">
@@ -760,12 +783,8 @@
                                         <input type="file" id="modalPositionPhoto" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
                                     </div>
                                     <div class="flex justify-between">
-                                        <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
-                                            <i class="fa fa-volume-up mr-1"></i>语音点播
-                                        </button>
-                                        <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
-                                            下一步 <i class="fa fa-arrow-right ml-1"></i>
-                                        </button>
+                                        <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center"><i class="fa fa-volume-up mr-1"></i>语音点播</button>
+                                        <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">下一步 <i class="fa fa-arrow-right ml-1"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -802,7 +821,6 @@
         // 设置任务勾选功能 - 完善版
         function setupTaskCheckboxes() {
             const checkboxes = document.querySelectorAll('.task-checkbox:not([disabled])');
-
             checkboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
                     const taskContainer = this.closest('.bg-blue-50');
@@ -811,24 +829,20 @@
 
                     if (this.checked) {
                         taskText.classList.add('line-through', 'text-gray-400');
-
                         if (statusBadge) {
                             statusBadge.textContent = '已完成';
                             statusBadge.classList.remove('bg-blue-100', 'text-blue-800');
                             statusBadge.classList.add('bg-green-100', 'text-green-800');
                         }
-
-                        const completionTime = new Date().toLocaleTimeString('zh-CN', {hour: '2-digit', minute:'2-digit'});
-                        alert(`任务已标记为完成！\n完成时间：${completionTime}\n记录已自动保存。`);
+                        const completionTime = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+                        alert(`任务已标记为完成！完成时间：${completionTime}记录已自动保存。`);
                     } else {
                         taskText.classList.remove('line-through', 'text-gray-400');
-
                         if (statusBadge) {
                             statusBadge.textContent = '待完成';
                             statusBadge.classList.remove('bg-green-100', 'text-green-800');
                             statusBadge.classList.add('bg-blue-100', 'text-blue-800');
                         }
-
                         alert('任务已取消完成，您可以稍后重新标记。');
                     }
                 });
@@ -837,11 +851,9 @@
 
         function setupFeedbackForm() {
             const feedbackForm = document.getElementById('feedbackForm');
-
             if (feedbackForm) {
                 feedbackForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-
                     const feedbackType = document.getElementById('feedbackType').value;
                     const feedbackContent = document.getElementById('feedbackContent').value;
 
@@ -849,7 +861,6 @@
                         alert('请输入您的问题描述');
                         return;
                     }
-
                     alert('问题提交成功，医护人员将尽快回复您！');
                     feedbackForm.reset();
                 });
@@ -869,7 +880,6 @@
                                 const img = document.createElement('img');
                                 img.src = event.target.result;
                                 img.className = 'w-full h-full object-cover rounded-md';
-
                                 button.innerHTML = '';
                                 button.appendChild(img);
 
@@ -879,14 +889,10 @@
                                 deleteBtn.onclick = function(e) {
                                     e.stopPropagation();
                                     button.innerHTML = '<i class="fa fa-plus text-gray-400"></i><input type="file" accept="image/*" class="hidden">';
-
                                     const newFileInput = button.querySelector('input[type="file"]');
                                     newFileInput.addEventListener('change', fileInput.onchange);
-                                    button.addEventListener('click', function() {
-                                        newFileInput.click();
-                                    });
+                                    button.addEventListener('click', function() { newFileInput.click(); });
                                 };
-
                                 button.style.position = 'relative';
                                 button.appendChild(deleteBtn);
                             };
