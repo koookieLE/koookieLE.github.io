@@ -655,11 +655,11 @@ function openPostopModal(type){
             text:`【术护康团队原创】术后半卧位进行踝泵运动，预防血栓`,
             action:'bed-activity'
         },
-
         3: {
-            text:`【术护康团队原创】膝下垫枕头，减少切口张力`,
-            img: "tiwei.jpg"
-        },
+    text:`【术护康团队原创】膝下垫枕头，减少切口张力，避免腹压增高，降低复发风险`,
+    img: "tiwei.jpg",
+    action:'breathing'  // 加上这一行，自动调用AI指导
+    },
 
         4: {
             text:`【术护康团队原创】可自行上下床，动作轻缓`,
@@ -690,14 +690,36 @@ function openPostopModal(type){
     const data = map[type];
 
     let mediaHTML = '';
-    if (data.img) {
-        // 静态图片
-        mediaHTML = `
-            <div class="mt-3 w-full">
-                <img src="${data.img}" class="w-full rounded-lg border border-gray-200" alt="指导示意图">
+if (data.img) {
+    // 静态图片 + AI指导（和视频指导一样）
+    mediaHTML = `
+        <div class="mt-3 w-full">
+            <img src="${data.img}" class="w-full rounded-lg border border-gray-200" alt="指导示意图">
+        </div>
+
+        <!-- AI体位纠正模块（和视频指导完全一致） -->
+        <div class="border-t pt-3 mt-3">
+            <h4 class="text-sm font-semibold text-gray-800 mb-2 flex items-center">
+                <i class="fa fa-camera text-primary mr-2"></i>AI体位纠正
+            </h4>
+            <div class="bg-blue-50 p-3 rounded-lg">
+                <p class="text-xs text-gray-700 mb-2">动作完成后，请正面拍摄您的体位进行AI分析</p>
+                <div class="relative w-full h-32 bg-white border border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-2">
+                    <i class="fa fa-camera text-gray-400 text-3xl"></i>
+                    <input type="file" id="modalPositionPhoto" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                </div>
+                <div class="flex justify-between">
+                    <button id="modalVoiceGuideBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
+                        <i class="fa fa-volume-up mr-1"></i>语音点播
+                    </button>
+                    <button id="modalNextStepBtn" class="text-xs bg-primary text-white px-3 py-1 rounded flex items-center">
+                        下一步 <i class="fa fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
             </div>
-        `;
-    } else if (data.action) {
+        </div>
+    `;
+} else if (data.action) {
         // 视频按钮
         mediaHTML = `
             <button onclick="createAIGuideModal('${data.action}')"
@@ -724,6 +746,8 @@ function openPostopModal(type){
     </div>`;
 
     document.body.insertAdjacentHTML('beforeend', html);
+    // 绑定AI弹窗按钮事件（拍照、语音、下一步）
+    bindModalEvents();
 }
         // 创建AI指导弹窗 - 包含真实视频
         function createAIGuideModal(actionType) {
