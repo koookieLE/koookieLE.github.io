@@ -572,7 +572,14 @@
             document.getElementById('modalPositionPhoto').addEventListener('change', function(e) {
                 if (e.target.files && e.target.files[0]) {
                     alert('AI体位分析模拟：正在分析您的体位...');
-                    setTimeout(() => alert('AI分析结果：体位正确，请继续保持。'), 1500);
+                    setTimeout(() => {
+                        const modalTitle = document.querySelector(".bg-primary h3").textContent;
+                        if (modalTitle.includes("咳嗽") || modalTitle.includes("有效咳嗽")) {
+                            alert('AI分析结果：体位正确，请继续保持。');
+                        } else {
+                            alert('AI分析结果：体位错误，请按照指导调整姿势后重新拍摄。');
+                        }
+                    }, 1500);
                 }
             });
             document.getElementById('modalVoiceGuideBtn').addEventListener('click', () => {
@@ -709,7 +716,14 @@
             document.getElementById('modalPositionPhoto').addEventListener('change', function(e) {
                 if (e.target.files && e.target.files[0]) {
                     alert('AI体位分析模拟：正在分析您的体位...');
-                    setTimeout(() => alert('AI分析结果：体位正确，请继续保持。'), 1500);
+                    setTimeout(() => {
+                        const modalTitle = document.querySelector(".bg-primary h3").textContent;
+                        if (modalTitle.includes("咳嗽") || modalTitle.includes("有效咳嗽")) {
+                            alert('AI分析结果：体位正确，请继续保持。');
+                        } else {
+                            alert('AI分析结果：体位错误，请按照指导调整姿势后重新拍摄。');
+                        }
+                    }, 1500);
                 }
             });
             document.getElementById('modalVoiceGuideBtn').addEventListener('click', () => {
